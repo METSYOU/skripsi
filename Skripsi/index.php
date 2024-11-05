@@ -106,45 +106,18 @@
         <div class="row mx-auto container-fluid">
           <div onclick="window.location.href='SilencerCategory.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="Assets/imgs/Silencer.jpg"/>
-
-            <!--<div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>-->
-
             <h5 class="p-name">Knalpot</h5>
             <button class="buy-btn">Beli Sekarang</button>
           </div>
 
           <div onclick="window.location.href='PlungerCategory.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="Assets/imgs/PLungerr.jpg"/>
-
-            <!--<div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>-->
-
             <h5 class="p-name">Plunger</h5>
             <button class="buy-btn">Beli Sekarang</button>
           </div>
 
           <div  onclick="window.location.href='NozzleCategory.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="Assets/imgs/Nozzle.jpg"/>
-
-            <!--<div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>-->
-
             <h5 class="p-name">Nozzle</h5>
             <button class="buy-btn">Beli Sekarang</button>
           </div>

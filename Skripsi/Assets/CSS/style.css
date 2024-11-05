@@ -310,13 +310,18 @@ footer li a:hover{
 .cart .remove-btn{
     color: coral;
     text-decoration: none;
+    background-color: white;
     font-size: 15px;
+    border: none;
+    width: 100%;
 }
 
 .cart .edit-btn{
     color: coral;
     text-decoration: none;
     font-size: 15px;
+    background-color: white;
+    border: none;
 }
 
 .cart .product-info p{
