@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piston</title>
+    <title>Catalog</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -60,25 +60,25 @@
 
       <section id="featured" class="my-5 py-5">
         <div class="container text-center mt-5 py-5">
-          <h3>Piston</h3>
+          <h3>Spareparts</h3>
           <hr>
         </div>
-        <div class="row mx-auto container-fluid">
+        <div class ="row mx-auto container-fluid">
+
+
+          <?php include('Assets/server/get_featured_category.php'); ?>
+
+          <?php while ($row= $featured_category->fetch_assoc()){ ?>
+
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="Assets/imgs/RingPiston.jpeg"/>
+            <img class="img-fluid mb-3" src="Assets/imgs/<?php echo $row['category_img']; ?>"/>
+            <h5 class="p-name"><?php echo $row ['category_name'];?></h5>
+            <a href="<?php echo "test.php?category_id=".$row['category_id'];?>"><button class="buy-btn">Beli Sekarang</button></a>
+          </div> 
 
-            <!--<div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>-->
 
-            <h5 class="p-name">Ring Piston Radin 7.5</h5>
-            <button class="buy-btn">Beli Sekarang</button>
+          <?php }?>
           </div>
-        </div>
       </section>
 
 

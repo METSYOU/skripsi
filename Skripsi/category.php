@@ -48,8 +48,8 @@
               </li>
 
               <li class="nav-item">
-                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                <a href="account.html"><i class="fas fa-user"></i></a>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
               </li>
 
             </ul>
@@ -66,19 +66,18 @@
         <div class="row mx-auto container-fluid">
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="Assets/imgs/RingPiston.jpeg"/>
-
-            <!--<div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>-->
-
-            <h5 class="p-name">Ring Piston Radin 7.5</h5>
-            <button class="buy-btn">Beli Sekarang</button>
           </div>
-        </div>
+          </div>
+
+            <nav aria-label="page navigation example">
+                <ul class="pagination mt-5">
+                  <li class="page-item"><a class="page-link" href="PistonCategory.html">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="PistonCategory.html">1</a></li>
+                  <li class="page-item"><a class="page-link" href="PistonCategory2.html">2</a></li>
+                  <li class="page-item"><a class="page-link" href="PistonCategory3.html">3</a></li>
+                    <li class="page-item"><a class="page-link" href="PistonCategory3.html">Next</a></li>
+                </ul>
+            </nav>
       </section>
 
 

@@ -48,8 +48,8 @@
               </li>
 
               <li class="nav-item">
-                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                <a href="account.html"><i class="fas fa-user"></i></a>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
               </li>
 
             </ul>
@@ -60,24 +60,25 @@
 
       <section id="featured" class="my-5 py-5">
         <div class="container text-center mt-5 py-5">
-          <h3>Piston</h3>
+          <h3>Spare Parts</h3>
           <hr>
         </div>
         <div class="row mx-auto container-fluid">
+
+
+        <?php include('Assets/server/get_piston.php'); ?>
+
+        <?php while ($row= $featured_products->fetch_assoc()){ ?>
+
+
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="Assets/imgs/RingPiston.jpeg"/>
+            <img class="img-fluid mb-3" src="Assets/imgs/<?php echo $row['products_image']; ?>"/>
 
-            <!--<div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>-->
-
-            <h5 class="p-name">Ring Piston Radin 7.5</h5>
-            <button class="buy-btn">Beli Sekarang</button>
+            <h5 class="p-name"><?php echo $row ['products_name'];?></h5>
+            <a href="<?php echo "single_product.php?products_id=".$row['products_id'];?>"><button class="buy-btn">Beli Sekarang</button></a>
           </div>
+
+          <?php }?>
         </div>
       </section>
 

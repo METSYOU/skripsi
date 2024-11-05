@@ -1,33 +1,44 @@
+<?php
+
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+
+// Check if the cart is not empty and 'checkout' is set
+if (!empty($_SESSION['cart']) && isset($_POST['checkout'])) {
+    // Proceed with checkout logic (if any)
+} else {
+    // Redirect or show an error if conditions are not met
+    header("Location: cart.html"); // Redirect back to cart page if needed
+    exit();
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piston</title>
+    <title>Home</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     
     <link rel="stylesheet" href="Assets/CSS/style.css"/>
-
-
-    <style>
-        .pagination a{
-            color: coral;
-        }
-
-        .pagination li:hover a{
-            color: white;
-            background-color: coral;
-        }
-    </style>
-
-
 </head>
 <body> 
+    
 
+<!--navbar-->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
         <div class="container">
@@ -58,33 +69,46 @@
       </nav>
 
 
-      <section id="featured" class="my-5 py-5">
-        <div class="container text-center mt-5 py-5">
-          <h3>Piston</h3>
-          <hr>
+
+
+
+
+      <!--Checkout-->
+    <section class="my-5 py-5">
+        <div class="container text-center mt-3 pt-5">
+            <h2 class="form-weight-bold">Check Out</h2>
+            <hr class="mx-auto">
         </div>
-        <div class="row mx-auto container-fluid">
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="Assets/imgs/RingPiston.jpeg"/>
-
-            <!--<div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>-->
-
-            <h5 class="p-name">Ring Piston Radin 7.5</h5>
-            <button class="buy-btn">Beli Sekarang</button>
-          </div>
+        <div class="mx-auto container">
+            <form id="checkout-form" method="POST" action="Assets/server/place_order.php">
+                <div class="form-group checkout-small-element">
+                <label>Nama</label>
+                <input type="text" class="form-control" id="checkout-name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group checkout-small-element">
+                  <label>Nomor Hp</label>
+                  <input type="tel" class="form-control" id="checkout-phone" name="phone" placeholder="Nomor Hp" required>
+                  </div>
+                <div class="form-group checkout-small-element">
+                    <label>Email</label>
+                    <input type="text" class="form-control" id="checkout-email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group checkout-large-element">
+                  <label>Address</label>
+                  <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Alamat" required>
+                </div>
+                <div class="form-group checkout-btn-container">
+                  <p>Total Harga: Rp <?php echo $_SESSION['total']; ?></p>
+                    <input type="submit" class="btn" id="checkout-btn" name="place_order" value="Place Order">
+                </div>
+            </form>
         </div>
-      </section>
+    </section>
 
 
-      
 
 
+    <!--footer-->
       <footer class="mt-5 py-5">
         <div class="row container mx-auto pt-5">
           <div class="footer-one col-lg-3 col-md-6 col-sm-12">
@@ -130,8 +154,8 @@
             </div>
           </div>
         </div>
+        
       </footer> 
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
